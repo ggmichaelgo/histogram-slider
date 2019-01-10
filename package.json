@@ -1,8 +1,8 @@
 {
   "name": "histogram-slider",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Range slider with histogram graph",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9009",
