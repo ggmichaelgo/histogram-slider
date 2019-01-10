@@ -23,11 +23,12 @@ export default class Slider extends React.Component {
     this.onMouseDown = this.onMouseDown.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
     this.getMousePosition = this.getMousePosition.bind(this);
-    this.reRender = this.reRender.bind(this);
+    this.rerender = this.rerender.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener("mouseup", this.onMouseUp, false);
+    this.updateActiveTrack();
   }
 
   componentWillUnmount() {
@@ -118,13 +119,13 @@ export default class Slider extends React.Component {
   updateActiveTrack() {
     const { handlePosition } = this.props;
     const width = handlePosition[1] - handlePosition[0];
-    const trackWidth = this.trackBackground.width.baseVal.value;
+    const trackWidth = this.container.parentNode.offsetWidth;
 
     this.activeTrack.setAttributeNS(null, 'x', `calc(${handlePosition[0]}% + 12.5px)`);
     this.activeTrack.setAttributeNS(null, 'width', `${trackWidth * (width / 100) - 25}`);
   }
 
-  reRender() {
+  rerender() {
     const handlePosition = Object.assign([], this.props.handlePosition);
     handlePosition[0] = Math.round(handlePosition[0] * 100) / 100;
     handlePosition[1] = Math.round(handlePosition[1] * 100) / 100;
@@ -139,7 +140,7 @@ export default class Slider extends React.Component {
       <svg
         className="slider-container"
         ref={r => (this.container = r)}
-        onClick={this.reRender}
+        onClick={this.rerender}
       >
         <rect
           ref={r => (this.trackBackground = r)}
