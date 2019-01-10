@@ -1,0 +1,33 @@
+{
+  "name": "histogram-slider",
+  "version": "1.0.0",
+  "description": "Range slider with histogram graph",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "histogram",
+    "slider"
+  ],
+  "author": "Michael Go",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "css-loader": "^2.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-links": "^4.1.4",
+    "@storybook/addons": "^4.1.4",
+    "@storybook/react": "^4.1.4",
+    "babel-loader": "^8.0.5"
+  }
+}

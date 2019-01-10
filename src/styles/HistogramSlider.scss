@@ -1,0 +1,50 @@
+.histogram-slider-container {
+  overflow: hidden;
+  border: 1px solid black;
+  height: 100px;
+
+  .histogram-container {
+    height: calc(100% - 17px);
+  }
+
+  .histogram-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+
+    .bar rect {
+      fill: #E5EFF5;
+    }
+  }
+
+  .slider-container {
+    display: block;
+    width: 100%;
+    height: 17px;
+    overflow: overlay;
+
+    .track-background {
+      width: 100%;
+      height: 10px;
+      fill: #E6E6E6;
+    }
+
+    .active-track {
+      height: 10px;
+      fill: #17479D;
+    }
+
+    .handle {
+      y: -9px;
+      width: 25px;
+      height: 25px;
+      rx: 25px;
+      ry: 25px;
+      stroke: #17479D;
+      fill: white;
+      cursor: pointer;
+    }
+  }
+}
