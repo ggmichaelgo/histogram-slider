@@ -29,5 +29,13 @@
     "@storybook/addons": "^4.1.4",
     "@storybook/react": "^4.1.4",
     "babel-loader": "^8.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggmichaelgo/histogram-slider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ggmichaelgo/histogram-slider/issues"
+  },
+  "homepage": "https://github.com/ggmichaelgo/histogram-slider#readme"
 }
