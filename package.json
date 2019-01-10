@@ -1,12 +1,15 @@
 {
   "name": "histogram-slider",
-  "version": "1.0.3",
+  "version": "1.0.11",
   "description": "Range slider with histogram graph",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "clean-dist": "rm -rf ./dist",
+    "build": "yarn run clean-dist && NODE_ENV=production babel src -d dist --copy-files",
+    "publish": "yarn run build && npm publish"
   },
   "keywords": [
     "histogram",
@@ -22,13 +25,23 @@
     "style-loader": "^0.23.1",
     "underscore": "^1.9.1"
   },
+  "peerDependencies": {
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.1.4",
     "@storybook/addon-links": "^4.1.4",
     "@storybook/addons": "^4.1.4",
     "@storybook/react": "^4.1.4",
-    "babel-loader": "^8.0.5"
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
   },
   "repository": {
     "type": "git",

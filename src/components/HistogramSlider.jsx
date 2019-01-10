@@ -18,7 +18,7 @@ export default class HistogramSlider extends React.Component {
     className: '',
     onChange: undefined,
     defaultHandlePosition: [0, 100],
-    valueList: [1,1,1,1,2,2,3,3,3,4,5,6,7,8,8,8,8,8,8]
+    valueList: [1, 1, 1, 1, 2, 2, 3, 3, 3, 4, 5, 6, 7, 8, 8, 8, 8, 8, 8]
   };
 
   constructor(props, context) {
