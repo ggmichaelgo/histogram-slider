@@ -71,7 +71,7 @@ function (_React$Component) {
       var maxValue = _underscore.default.max(Object.values(this.histogramList));
 
       var barWidth = 1 / Object.keys(this.histogramList).length * 100;
-      var barHeight = value / maxValue * 100;
+      var barHeight = (value + 2) / maxValue * 100;
       return _react.default.createElement("g", {
         className: "bar",
         key: "bar-".concat(index)
