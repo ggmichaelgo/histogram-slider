@@ -38,7 +38,7 @@ export default class Histogram extends React.Component {
     const { valueList } = this.props;
     const maxValue = _.max(Object.values(this.histogramList));
     const barWidth = 1 / (Object.keys(this.histogramList).length) * 100;
-    const barHeight = (value / maxValue) * 100;
+    const barHeight = (value + 2) / maxValue * 100;
 
     return (
       <g className="bar" key={`bar-${index}`}>
