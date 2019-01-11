@@ -1,6 +1,6 @@
 {
   "name": "histogram-slider",
-  "version": "1.0.12",
+  "version": "1.0.16",
   "description": "Range slider with histogram graph",
   "main": "dist/index.js",
   "scripts": {
@@ -39,9 +39,7 @@
     "@storybook/addons": "^4.1.4",
     "@storybook/react": "^4.1.4",
     "babel-loader": "^8.0.5",
-    "babel-plugin-module-resolver": "^3.1.1",
-    "react": ">=16.6.0",
-    "react-dom": ">=16.6.0"
+    "babel-plugin-module-resolver": "^3.1.1"
   },
   "repository": {
     "type": "git",
