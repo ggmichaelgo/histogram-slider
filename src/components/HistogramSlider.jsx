@@ -30,6 +30,7 @@ export default class HistogramSlider extends React.Component {
 
     this.rerender = this.rerender.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.getHandlePositions = this.getHandlePositions.bind(this);
   }
 
   rerender() {

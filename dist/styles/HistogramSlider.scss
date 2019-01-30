@@ -1,6 +1,10 @@
 .histogram-slider-container {
   height: 40px;
 
+  &.tall {
+    height: 100px;
+  }
+
   .histogram-container {
     height: calc(100% - 17px);
   }

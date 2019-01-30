@@ -53,6 +53,7 @@ function (_React$Component) {
     };
     _this.rerender = _this.rerender.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.onChange = _this.onChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.getHandlePositions = _this.getHandlePositions.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -73,6 +74,11 @@ function (_React$Component) {
       if (onChange) {
         onChange(handlePosition);
       }
+    }
+  }, {
+    key: "getHandlePositions",
+    value: function getHandlePositions() {
+      return this.state.handlePosition;
     }
   }, {
     key: "render",
