@@ -47,6 +47,10 @@ export default class HistogramSlider extends React.Component {
     }
   }
 
+  getHandlePositions() {
+    return this.state.handlePosition;
+  }
+
   render() {
     const { handlePosition } = this.state;
     const { className, valueList } = this.props;
