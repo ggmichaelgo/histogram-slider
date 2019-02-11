@@ -10,7 +10,7 @@ const histogramSliderStory = storiesOf('HistogramSlider', module);
 histogramSliderStory.add('Default', () =>
   <div style={{padding: 50}}>
     <HistogramSlider
-      tally={[
+      tally={{
         1: 20,
         2: 10,
         3: 1,
@@ -30,7 +30,7 @@ histogramSliderStory.add('Default', () =>
         17: 2,
         18: 25,
         19: 2
-      ]}
+      }}
       defaultHandlePosition={[10, 50]}
       onChange={(handlePosition) => {
         console.log('new handle positions', handlePosition);
@@ -43,7 +43,7 @@ histogramSliderStory.add('Tall', () =>
   <div style={{padding: 50}}>
     <HistogramSlider
       className="tall"
-      tally={[
+      tally={{
         1: 20,
         2: 10,
         3: 1,
@@ -63,7 +63,7 @@ histogramSliderStory.add('Tall', () =>
         17: 2,
         18: 25,
         19: 2
-      ]}
+      }}
       defaultHandlePosition={[10, 50]}
       onChange={(handlePosition) => {
         console.log('new handle positions', handlePosition);
