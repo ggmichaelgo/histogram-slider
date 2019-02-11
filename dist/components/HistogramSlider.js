@@ -88,12 +88,12 @@ function (_React$Component) {
       var handlePosition = this.state.handlePosition;
       var _this$props = this.props,
           className = _this$props.className,
-          valueList = _this$props.valueList;
+          tally = _this$props.tally;
       var containerClassName = (0, _classnames.default)('histogram-slider-container', className);
       return _react.default.createElement("div", {
         className: containerClassName
       }, _react.default.createElement(_Histogram.default, {
-        valueList: valueList
+        tally: tally
       }), _react.default.createElement(_Slider.default, {
         ref: function ref(r) {
           return _this2.slider = r;
@@ -118,5 +118,11 @@ HistogramSlider.defaultProps = {
   className: '',
   onChange: undefined,
   defaultHandlePosition: [0, 100],
-  valueList: [1, 1, 1, 1, 2, 2, 3, 3, 3, 4, 5, 6, 7, 8, 8, 8, 8, 8, 8]
+  tally: {
+    100000: 1,
+    150000: 2,
+    200000: 5,
+    250000: 10,
+    300000: 1
+  }
 };
