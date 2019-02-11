@@ -87,7 +87,7 @@ function (_React$Component) {
 
 exports.default = Histogram;
 Histogram.propTypes = {
-  tally: _propTypes.default.array.isRequired,
+  tally: _propTypes.default.object.isRequired,
   className: _propTypes.default.string
 };
 Histogram.defaultProps = {

@@ -109,7 +109,7 @@ function (_React$Component) {
 
 exports.default = HistogramSlider;
 HistogramSlider.propTypes = {
-  valueList: _propTypes.default.array.isRequired,
+  tally: _propTypes.default.object.isRequired,
   className: _propTypes.default.string,
   onChange: _propTypes.default.func,
   defaultHandlePosition: _propTypes.default.array
