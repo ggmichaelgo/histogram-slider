@@ -4,7 +4,7 @@ import _ from 'underscore';
 
 export default class Histogram extends React.Component {
   static propTypes = {
-    tally: PropTypes.array.isRequired,
+    tally: PropTypes.object.isRequired,
     className: PropTypes.string
   };
 

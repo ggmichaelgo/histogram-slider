@@ -8,7 +8,7 @@ require('../styles/HistogramSlider.scss');
 
 export default class HistogramSlider extends React.Component {
   static propTypes = {
-    valueList: PropTypes.array.isRequired,
+    tally: PropTypes.object.isRequired,
     className: PropTypes.string,
     onChange: PropTypes.func,
     defaultHandlePosition: PropTypes.array
