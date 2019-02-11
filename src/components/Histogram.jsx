@@ -4,7 +4,7 @@ import _ from 'underscore';
 
 export default class Histogram extends React.Component {
   static propTypes = {
-    valueList: PropTypes.array.isRequired,
+    tally: PropTypes.array.isRequired,
     className: PropTypes.string
   };
 
@@ -12,32 +12,15 @@ export default class Histogram extends React.Component {
     className: ''
   };
 
-  static getHistogramList(valueList) {
-    const histogramList = {};
-
-    valueList.forEach((value) => {
-      if (histogramList[value] === undefined) {
-        histogramList[value] = 0;
-      }
-
-      histogramList[value] += 1;
-    });
-
-    return histogramList;
-  }
-
   constructor(props, context) {
     super(props, context);
     this.renderBar = this.renderBar.bind(this);
-
-    const { valueList } = this.props;
-    this.histogramList = Histogram.getHistogramList(valueList);
   }
 
-  renderBar(value, index) {
-    const { valueList } = this.props;
-    const maxValue = _.max(Object.values(this.histogramList));
-    const barWidth = 1 / (Object.keys(this.histogramList).length) * 100;
+  renderBar(key, index, maxValue) {
+    const { tally } = this.props;
+    const value = tally[key];
+    const barWidth = 1 / (Object.keys(tally).length) * 100;
     const barHeight = (value + 2) / maxValue * 100;
 
     return (
@@ -53,11 +36,14 @@ export default class Histogram extends React.Component {
   }
 
   render() {
+    const { tally } = this.props;
+    const maxValue = _.max(Object.values(tally));
+
     return (
       <div className='histogram-container'>
         <svg className='histogram-wrapper'>
           {
-            Object.values(this.histogramList).map((e, i) => this.renderBar(e, i))
+            Object.keys(tally).map((k, i) => this.renderBar(k, i, maxValue))
           }
         </svg>
       </div>

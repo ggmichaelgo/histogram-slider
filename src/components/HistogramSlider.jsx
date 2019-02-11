@@ -18,7 +18,13 @@ export default class HistogramSlider extends React.Component {
     className: '',
     onChange: undefined,
     defaultHandlePosition: [0, 100],
-    valueList: [1, 1, 1, 1, 2, 2, 3, 3, 3, 4, 5, 6, 7, 8, 8, 8, 8, 8, 8]
+    tally: {
+      100000: 1,
+      150000: 2,
+      200000: 5,
+      250000: 10,
+      300000: 1
+    }
   };
 
   constructor(props, context) {
@@ -54,7 +60,7 @@ export default class HistogramSlider extends React.Component {
 
   render() {
     const { handlePosition } = this.state;
-    const { className, valueList } = this.props;
+    const { className, tally } = this.props;
     const containerClassName = classNames(
       'histogram-slider-container',
       className
@@ -62,7 +68,7 @@ export default class HistogramSlider extends React.Component {
 
     return (
       <div className={containerClassName}>
-        <Histogram valueList={valueList} />
+        <Histogram tally={tally} />
         <Slider
           ref={r => (this.slider = r)}
           onChange={this.onChange}
