@@ -17,24 +17,10 @@ histogramSliderStory.add('Default', () =>
         4: 2,
         5: 3,
         6: 20,
-        7: 20,
-        8: 50,
-        9: 25,
-        10: 49,
-        11: 44,
-        12: 55,
-        13: 12,
-        14: 42,
-        15: 10,
-        16: 5,
-        17: 2,
-        18: 25,
-        19: 2
+        150: 100
       }}
+      interval={5}
       defaultHandlePosition={[10, 50]}
-      onChange={(handlePosition) => {
-        console.log('new handle positions', handlePosition);
-      }}
     />
   </div>
 )
@@ -50,24 +36,9 @@ histogramSliderStory.add('Tall', () =>
         4: 2,
         5: 3,
         6: 20,
-        7: 20,
-        8: 50,
-        9: 25,
-        10: 49,
-        11: 44,
-        12: 55,
-        13: 12,
-        14: 42,
-        15: 10,
-        16: 5,
-        17: 2,
-        18: 25,
-        19: 2
+        100: 100
       }}
       defaultHandlePosition={[10, 50]}
-      onChange={(handlePosition) => {
-        console.log('new handle positions', handlePosition);
-      }}
     />
   </div>
 )

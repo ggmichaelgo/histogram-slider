@@ -1,6 +1,6 @@
 {
   "name": "histogram-slider",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Range slider with histogram graph",
   "main": "dist/index.js",
   "scripts": {

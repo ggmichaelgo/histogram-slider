@@ -9,9 +9,11 @@ require('../styles/HistogramSlider.scss');
 export default class HistogramSlider extends React.Component {
   static propTypes = {
     tally: PropTypes.object.isRequired,
+    interval: PropTypes.number,
     className: PropTypes.string,
     onChange: PropTypes.func,
-    defaultHandlePosition: PropTypes.array
+    defaultHandlePosition: PropTypes.array,
+    unit: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
   };
 
   static defaultProps = {
@@ -24,7 +26,9 @@ export default class HistogramSlider extends React.Component {
       200000: 5,
       250000: 10,
       300000: 1
-    }
+    },
+    interval: 20,
+    unit: ''
   };
 
   constructor(props, context) {
@@ -34,6 +38,11 @@ export default class HistogramSlider extends React.Component {
       handlePosition: props.defaultHandlePosition
     }
 
+    const keyList = Object.keys(props.tally).map(e => parseInt(e));
+    this.minValue = Math.min(...keyList);
+    this.maxValue = Math.max(...keyList);
+
+    this.format = this.format.bind(this);
     this.rerender = this.rerender.bind(this);
     this.onChange = this.onChange.bind(this);
     this.getHandlePositions = this.getHandlePositions.bind(this);
@@ -58,22 +67,43 @@ export default class HistogramSlider extends React.Component {
     return this.state.handlePosition;
   }
 
+  format(value) {
+    const nativeValue = (this.maxValue - this.minValue) * (value / 100.0);
+    return parseInt(nativeValue).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   render() {
     const { handlePosition } = this.state;
-    const { className, tally } = this.props;
+    const { className, tally, unit, interval } = this.props;
     const containerClassName = classNames(
-      'histogram-slider-container',
+      'histogram-slider-wrapper',
       className
     );
 
     return (
       <div className={containerClassName}>
-        <Histogram tally={tally} />
-        <Slider
-          ref={r => (this.slider = r)}
-          onChange={this.onChange}
-          handlePosition={handlePosition}
-        />
+        <div className="histogram-slider-container">
+          <Histogram tally={tally} interval={interval} />
+          <Slider
+            ref={r => (this.slider = r)}
+            onChange={this.onChange}
+            handlePosition={handlePosition}
+          />
+        </div>
+        <div className="label-container">
+          {
+            parseInt(handlePosition[0]) === 0 ?
+              <label>No min</label>
+              :
+              <label>{this.format(handlePosition[0])}<span>{unit}</span></label>
+          }
+          {
+            parseInt(handlePosition[1]) === 100 ?
+              <label>No max</label>
+              :
+              <label>{this.format(handlePosition[1])}<span>{unit}</span></label>
+          }
+        </div>
       </div>
     );
   }
